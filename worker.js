@@ -294,12 +294,12 @@ async function onInline(event, inline) {
   let  fID; let fName; let fType; let fSize; let fLen;
 
   if (!PUBLIC_BOT && inline.from.id != BOT_OWNER) {
-    const buttons = [[{ text: "Source Code", url: "https://github.com/vauth/filestream-cf" }]];
-    return await Bot.answerInlineArticle(inline.id, "Access forbidden", "Deploy your own filestream-cf.", "*❌ Access forbidden.*\n📡 Deploy your own [filestream-cf](https://github.com/vauth/filestream-cf) bot.", buttons)
+    const buttons = [[{ text: "Source Code", url: "https://github.com/nyeinkokoaung404/filestream-cf" }]];
+    return await Bot.answerInlineArticle(inline.id, "Access forbidden", "Deploy your own filestream-cf.", "*❌ Access forbidden.*\n📡 Deploy your own [filestream-cf](https://github.com/nyeinkokoaung404/filestream-cf) bot.", buttons)
   }
  
   try {await Cryptic.deHash(inline.query)} catch {
-    const buttons = [[{ text: "Source Code", url: "https://github.com/vauth/filestream-cf" }]];
+    const buttons = [[{ text: "Source Code", url: "https://github.com/nyeinkokoaung404/filestream-cf" }]];
     return await Bot.answerInlineArticle(inline.id, "Error", ERROR_407.description, ERROR_407.description, buttons)
   }
 
@@ -308,7 +308,7 @@ async function onInline(event, inline) {
   const data = await Bot.editMessage(channel_id, message_id, await UUID());
 
   if (data.error_code){
-    const buttons = [[{ text: "Source Code", url: "https://github.com/vauth/filestream-cf" }]];
+    const buttons = [[{ text: "Source Code", url: "https://github.com/nyeinkokoaung404/filestream-cf" }]];
     return await Bot.answerInlineArticle(inline.id, "Error", data.description, data.description, buttons)
   }
 
@@ -391,8 +391,8 @@ async function onMessage(event, message) {
   }
 
   if (!PUBLIC_BOT && message.chat.id != BOT_OWNER) {
-    const buttons = [[{ text: "Source Code", url: "https://github.com/vauth/filestream-cf" }]];
-    return Bot.sendMessage(message.chat.id, message.message_id, "*❌ Access forbidden.*\n📡 Deploy your own [filestream-cf](https://github.com/vauth/filestream-cf) bot.", buttons)
+    const buttons = [[{ text: "Source Code", url: "https://github.com/nyeinkokoaung404/filestream-cf" }]];
+    return Bot.sendMessage(message.chat.id, message.message_id, "*❌ Access forbidden.*\n📡 Deploy your own [filestream-cf](https://github.com/nyeinkokoaung404/filestream-cf) bot.", buttons)
   }
 
   if (message.document){
@@ -416,7 +416,7 @@ async function onMessage(event, message) {
     fType = "image/jpg".split("/")[0];
     fSave = await Bot.sendPhoto(BOT_CHANNEL, fID)
   } else {
-    const buttons = [[{ text: "Source Code", url: "https://github.com/vauth/filestream-cf" }]];
+    const buttons = [[{ text: "Source Code", url: "https://github.com/nyeinkokoaung404/filestream-cf" }]];
     return Bot.sendMessage(message.chat.id, message.message_id, "Send me any file/video/gif/audio *(t<=4GB, e<=20MB)*.", buttons)
   }
 
